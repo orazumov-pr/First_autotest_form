@@ -55,7 +55,7 @@ public class PracticeFormTests {
         $("#uploadPicture").uploadFromClasspath("resources/my_abstract_scr.jpg");
 
         //Селектор для вставки Current Address
-        $("#currentAddress").setValue("Ulitsa Lenina, 1");
+        $("#currentAddress").setValue("Ulitsa Lenina, 5");
 
         //Селекторы для State and City
         $("#state").click();
@@ -74,7 +74,7 @@ public class PracticeFormTests {
         $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("English"));
         $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Music"));
         $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("my_abstract_scr.jpg"));
-        $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Ulitsa Lenina, 1"));
+        $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Ulitsa Lenina, 5"));
         $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("Uttar Pradesh Merrut"));
     }
 }
