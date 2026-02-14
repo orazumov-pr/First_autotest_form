@@ -3,7 +3,7 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -46,7 +46,7 @@ public class PracticeFormTests {
         $(".react-datepicker__day.react-datepicker__day--014").click();
 
         //Селектор для Subjects
-        $("#subjectsInput").setValue("Abstract text").pressEnter();
+        $("#subjectsInput").setValue("En").pressEnter();
 
         //Селектор для radiobutton Hobbies
         $("#hobbies-checkbox-2").parent().click();
@@ -71,7 +71,7 @@ public class PracticeFormTests {
         $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Male"));
         $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("89067776655"));
         $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("14 January, 1977"));
-        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("Abstract text"));
+        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("English"));
         $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Music"));
         $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("my_abstract_scr.jpg"));
         $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Ulitsa Lenina, 1"));
