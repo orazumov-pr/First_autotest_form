@@ -52,8 +52,17 @@ public class PracticeFormTests {
         //Селектор для вставки картинки
         $("#uploadPicture").uploadFromClasspath("resources/my_abstract_scr.jpg");
 
-        //Селектор для вставки адреса
+        //Селектор для вставки Current Address
         $("#currentAddress").setValue("Ulitsa Lenina, 1");
+
+        //Селекторы для State and City
+        $("#state").click();
+        $(byText("Uttar Pradesh")).click();
+        $("#city").click();
+        $(byText("Merrut")).click();
+        $("#submit").click();
+
+
 
 
         $("#output #name").shouldHave(text("Alex"));
