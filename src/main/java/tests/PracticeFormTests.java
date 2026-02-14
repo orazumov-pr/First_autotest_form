@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class TextBoxTests {
+public class PracticeFormTests {
 
     @BeforeAll
     static void beforeAll() {
@@ -23,15 +23,23 @@ public class TextBoxTests {
     @Test
     void fillFormTest() {
         open("/automation-practice-form");
+        //Селекторы для Name и Email
         $("#firstName").setValue("Oleg");
         $("#lastName").setValue("Razumov");
         $("#userEmail").setValue("razumov@mail.ru");
-        //Добавить селекторы для radiobutton Gender
+
+        //Селектор для radiobutton Gender
+        $("#gender-radio-1").click();
+
+        //Селектор для Mobile number
         $("#userNumber").setValue("89067776655");
+
+        //Селекторы для Календаря
         $(".react-datepicker__month-select").setValue("1");
         $(".react-datepicker__year-select").setValue("2026");
         $(".react-datepicker__day react-datepicker__day--008 react-datepicker__day--weekend").setValue("1");
         $(".subjects-auto-complete__input").setValue("Some text");
+
         //Добавить селекторы для radiobutton Hobbies
 
 
