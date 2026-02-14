@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -29,7 +30,7 @@ public class PracticeFormTests {
         $("#userEmail").setValue("razumov@mail.ru");
 
         //Селектор для radiobutton Gender
-        $("#gender-radio-1").click();
+        $("#genterWrapper").$(byText("Male")).click();
 
         //Селектор для Mobile number
         $("#userNumber").setValue("89067776655");
@@ -42,14 +43,17 @@ public class PracticeFormTests {
         $("option[value='1']").click();
         $(".react-datepicker__day.react-datepicker__day--014").click();
 
+        //Селектор для Subjects
         $("#subjectsInput").setValue("Abstract text").pressEnter();
+
+        //Селектор для radiobutton Hobbies
         $("#hobbies-checkbox-2").parent().click();
+
+        //Селектор для вставки картинки
         $("#uploadPicture").uploadFromClasspath("resources/my_abstract_scr.jpg");
 
-        //Добавить селекторы для radiobutton Hobbies
-        $("#hobbies-checkbox-2").click();
-
-
+        //Селектор для вставки адреса
+        $("#currentAddress").setValue("Ulitsa Lenina, 1");
 
 
         $("#output #name").shouldHave(text("Alex"));
