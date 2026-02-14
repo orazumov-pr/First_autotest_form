@@ -35,16 +35,22 @@ public class PracticeFormTests {
         $("#userNumber").setValue("89067776655");
 
         //Селекторы для Календаря
-        $(".react-datepicker__month-select").setValue("1");
-        $(".react-datepicker__year-select").setValue("2026");
-        $(".react-datepicker__day react-datepicker__day--008 react-datepicker__day--weekend").setValue("1");
-        $(".subjects-auto-complete__input").setValue("Some text");
+        $("#dateOfBirthInput").click();
+        $(".react-datepicker__year-select").click();
+        $("option[value='1977']").click();
+        $(".react-datepicker__month-select").click();
+        $("option[value='1']").click();
+        $(".react-datepicker__day.react-datepicker__day--014").click();
+
+        $("#subjectsInput").setValue("Abstract text").pressEnter();
+        $("#hobbies-checkbox-2").parent().click();
+        $("#uploadPicture").uploadFromClasspath("resources/my_abstract_scr.jpg");
 
         //Добавить селекторы для radiobutton Hobbies
+        $("#hobbies-checkbox-2").click();
 
 
 
-        $("#submit").click();
 
         $("#output #name").shouldHave(text("Alex"));
         $("#output #email").shouldHave(text("alex@egorov.com"));
