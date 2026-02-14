@@ -22,11 +22,16 @@ public class TextBoxTests {
 
     @Test
     void fillFormTest() {
-        open("/text-box");
+        open("/automation-practice-form");
         $("#firstName").setValue("Oleg");
         $("#lastName").setValue("Razumov");
         $("#userEmail").setValue("razumov@mail.ru");
-        $("#permanentAddress").setValue("Another street 1");
+
+        $("#userNumber").setValue("89067776655");
+        $(".react-datepicker__month-select").setValue("1");
+        $(".react-datepicker__year-select").setValue("2026");
+        $(".react-datepicker__day react-datepicker__day--008 react-datepicker__day--weekend").setValue("1");
+
         $("#submit").click();
 
         $("#output #name").shouldHave(text("Alex"));
