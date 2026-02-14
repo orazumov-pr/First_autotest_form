@@ -26,11 +26,15 @@ public class TextBoxTests {
         $("#firstName").setValue("Oleg");
         $("#lastName").setValue("Razumov");
         $("#userEmail").setValue("razumov@mail.ru");
-
+        //Добавить селекторы для radiobutton Gender
         $("#userNumber").setValue("89067776655");
         $(".react-datepicker__month-select").setValue("1");
         $(".react-datepicker__year-select").setValue("2026");
         $(".react-datepicker__day react-datepicker__day--008 react-datepicker__day--weekend").setValue("1");
+        $(".subjects-auto-complete__input").setValue("Some text");
+        //Добавить селекторы для radiobutton Hobbies
+
+
 
         $("#submit").click();
 
