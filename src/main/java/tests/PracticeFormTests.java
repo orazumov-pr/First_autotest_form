@@ -24,6 +24,8 @@ public class PracticeFormTests {
     @Test
     void fillFormTest() {
         open("/automation-practice-form");
+
+        //Заполнение формы
         //Селекторы для Name и Email
         $("#firstName").setValue("Oleg");
         $("#lastName").setValue("Razumov");
@@ -63,11 +65,16 @@ public class PracticeFormTests {
         $("#submit").click();
 
 
-
-
-        $("#output #name").shouldHave(text("Alex"));
-        $("#output #email").shouldHave(text("alex@egorov.com"));
-        $("#output #currentAddress").shouldHave(text("Some street 1"));
-        $("#output #permanentAddress").shouldHave(text("Another street 1"));
+        //Проверка
+        $(".table-responsive").$(byText("Name")).parent().shouldHave(text("Oleg Razumov"));
+        $(".table-responsive").$(byText("Email")).parent().shouldHave(text("razumov@mail.ru"));
+        $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Male"));
+        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("89067776655"));
+        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("14 January, 1977"));
+        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("Abstract text"));
+        $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Music"));
+        $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("my_abstract_scr.jpg"));
+        $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Ulitsa Lenina, 1"));
+        $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("Uttar Pradesh Merrut"));
     }
 }
