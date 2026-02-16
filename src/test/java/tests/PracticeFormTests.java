@@ -6,8 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormTests {
 
@@ -18,9 +17,11 @@ public class PracticeFormTests {
         Configuration.baseUrl = "https://demoqa.com/&quot;;";
     }
 
-   @Test
-    void fillFormTest() {
-        open("/automation-practice-form");
+     @Test
+       void fillFormTest() {
+            open("");
+         $$(".card-body").findBy(text("Forms")).click();
+         $$(".router-link").findBy(text("Practice Form")).click();
 
         //Заполнение формы
         //Селекторы для Name и Email
@@ -35,12 +36,10 @@ public class PracticeFormTests {
         $("#userNumber").setValue("89067776655");
 
         //Селекторы для Календаря
-        $("#dateOfBirthInput").click();
-        $(".react-datepicker__year-select").click();
-        $("option[value='1977']").click();
-        $(".react-datepicker__month-select").click();
-        $("option[value='1']").click();
-        $(".react-datepicker__day.react-datepicker__day--014").click();
+         $("#dateOfBirthInput").click();
+         $(".react-datepicker__month-select").$(byText("May")).click();
+         $(".react-datepicker__year-select").$(byText("1977")).click();
+         $(".react-datepicker__day--014:not(.react-datepicker__day--outside-month)").click();
 
         //Селектор для Subjects
         $("#subjectsInput").setValue("En").pressEnter();
