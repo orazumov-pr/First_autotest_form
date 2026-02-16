@@ -14,12 +14,12 @@ public class PracticeFormTests {
     static void setUp() {
         Configuration.browserSize = "1920x1080";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.baseUrl = "https://demoqa.com/&quot;;";
+        Configuration.baseUrl = "https://demoqa.com/";
     }
 
      @Test
        void fillFormTest() {
-            open("");
+        open("");
          $$(".card-body").findBy(text("Forms")).click();
          $$(".router-link").findBy(text("Practice Form")).click();
 
