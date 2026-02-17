@@ -33,7 +33,7 @@ public class PracticeFormTests {
         $("#genterWrapper").$(byText("Male")).click();
 
         //Селектор для Mobile number
-        $("#userNumber").setValue("89067776655");
+        $("#userNumber").setValue("9997776655");
 
         //Селекторы для Календаря
          $("#dateOfBirthInput").click();
@@ -62,10 +62,11 @@ public class PracticeFormTests {
 
 
         //Проверка
-        $(".table-responsive").$(byText("Name")).parent().shouldHave(text("Oleg Razumov"));
-        $(".table-responsive").$(byText("Email")).parent().shouldHave(text("razumov@mail.ru"));
+         $(".modal-header").shouldHave(text("Thanks for submitting the form"));
+         $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("Oleg Razumov"));
+         $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text("razumov@mail.ru"));
         $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Male"));
-        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("89067776655"));
+        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("9997776655"));
         $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("14 January, 1977"));
         $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("English"));
         $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Music"));
