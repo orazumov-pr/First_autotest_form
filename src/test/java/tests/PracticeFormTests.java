@@ -37,7 +37,7 @@ public class PracticeFormTests {
 
         //Селекторы для Календаря
          $("#dateOfBirthInput").click();
-         $(".react-datepicker__month-select").$(byText("May")).click();
+         $(".react-datepicker__month-select").$(byText("January")).click();
          $(".react-datepicker__year-select").$(byText("1977")).click();
          $(".react-datepicker__day--014:not(.react-datepicker__day--outside-month)").click();
 
@@ -48,7 +48,7 @@ public class PracticeFormTests {
         $("#hobbies-checkbox-2").parent().click();
 
         //Селектор для вставки картинки
-        $("#uploadPicture").uploadFromClasspath("resources/my_abstract_scr.jpg");
+        $("#uploadPicture").uploadFromClasspath("my_abstract_scr.jpg");
 
         //Селектор для вставки Current Address
         $("#currentAddress").setValue("Ulitsa Lenina, 5");
